@@ -1,0 +1,755 @@
+/* CSS für die 4 Texte auf der Startseite */
+
+.absatz_color {
+	color: #bf5388;
+	font-family: 'Shadows Into Light Two';
+	font-weight: 600;
+}
+
+.home-text {
+	font-size: 15px;
+	text-transform: uppercase;
+	padding-top: 20px;
+	font-weight: bold;
+}
+
+.home-hovertext {
+	font-size: 15px;
+	position: relative;
+	cursor: pointer;
+	text-transform: uppercase;
+	padding-top: 20px;
+	font-weight: bold;
+}
+
+.home-hovertext .hovertext {
+	margin-top: 12px;
+	display: none;
+	font-size: 11px;
+	color: #46494a;
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 300;
+	position: absolute;
+	top: 3em;
+	line-height: 1em;
+	text-transform: none;
+}
+
+/* Mobile Topbar */
+
+@media (min-width: 768px) {
+	#wpo-topbar { display: none; }
+}
+
+#wpo-topbar .topbar-mobile .search-popup,
+#wpo-topbar .topbar-mobile .setting-popup {
+	display: none;
+}
+
+.cart-popup p {
+	color: #fff !important;
+}
+
+.dropdown-menu > li > a {
+  white-space: normal !important;
+}
+
+/* Footer */
+
+#wpo-footer,
+#wpo-footer .footer-top {
+	background-color: #fbfbec !important;
+	margin-bottom:75px !important;
+}
+
+
+/* Woocommerece */
+
+.form-row .terms label { display: inline-block !important; }
+
+.product-color-cat-container {
+	text-align: center;
+}
+
+.product-color-cat {
+	width: 75px;
+	height: 75px;
+	  display: inline-block;
+	margin: 10px;
+}
+.product-atmosphere-cat {
+	width: 180px;
+	height: 165px;
+	  display: inline-block;
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-top: 10px;
+}
+
+.single-product-materialangabe,
+.single-product-massangaben {
+	margin-bottom: 25px;
+}
+
+.single-product .stock {
+	margin-top: 25px;
+}
+
+.single-product-price .price {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.single-product-price .subprice {
+	margin-bottom: 25px;
+}
+
+.single-product-price .subprice a {
+	font-weight: 400;
+}
+
+.single-product-massangaben,
+.single-product-waschempfehlung {
+	padding-left: 10px;
+	display: none;
+}
+
+.single-product-massangaben-link,
+.single-product-waschempfehlung-link {
+	background-color: #FFF;
+	padding: 5px;
+	width: 220px;
+	margin-bottom: 3px;
+	cursor: pointer;
+	font-weight: 400;
+}
+
+.single-product-massangaben-link .inner-left,
+.single-product-waschempfehlung-link .inner-left {
+	float: left;
+	margin-left: 5px;
+}
+
+.single-product-massangaben-link .inner-right,
+.single-product-waschempfehlung-link .inner-right {
+	float: right;
+	margin-right: 5px;
+}
+
+.woocommerce-info {
+	margin-top: 1em !important;
+	margin-bottom: 2em !important;
+}
+
+.product-cart-besondere-merkmale {
+	font-size: 12px;
+}
+
+.product .quick-view { display: none !important; }
+
+a.cat-top-featured-container-link:link {
+	color: #fbfbec;
+	font-weight: 300;
+}
+
+a.cat-top-featured-container-link:visited {
+	color: #fbfbec;
+	font-weight: 300;
+}
+
+a.cat-top-featured-container-link:hover {
+	color: #fbfbec;
+	font-weight: 300;
+}
+
+a.cat-top-featured-container-link:active {
+	color: #fbfbec;
+	font-weight: 300;
+}
+
+.cat-top-featured-container {
+	position: relative;
+}
+
+.cat-top-featured-container img {
+	margin-top: 20px;
+}
+
+.cat-top-featured-container-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+.cat-top-featured-container-text .inner {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.66);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+}.home-images img {	width: 100% !important;	height: auto !important;}.wpo-copyright { display: none !important; }
+
+@media (max-width: 767px) {
+	.yith_magnifier_gallery li {
+	  float: none !important;
+	  display: inline-block !important;
+	}
+
+	table.shop_table {
+		font-size: 14px !Important;
+	}
+
+	.tax_label,
+	.cart-subtotal small{
+		display: block;
+	}
+
+	.woocommerce-checkout .postclass,
+	.woocommerce .payment_methods,
+	.woocommerce .place-order{
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.product-name,
+	.product-total {
+		padding-left: 10px !important;
+		line-height: 1.3em;
+	}
+
+	.cart-subtotal {
+		line-height: 1.3em;
+	}
+
+	#payment {
+		text-align: center;
+		background: #fff !important;
+	}
+
+	#place_order {
+		float: none !important;
+		margin-top: 20px !important;
+	}
+
+	#payment .methods label {
+		line-height: 30px;
+		font-size: 18px;
+	}
+
+	.woocommerce {
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+	}
+
+	.woocommerce form .form-row .input-checkbox, .woocommerce-page form .form-row .input-checkbox {
+		width: 15px;
+		height: 15px;
+	}
+
+	.woocommerce-page #payment ul.payment_methods li.payment_method_paypal img {
+		max-width: 20px !important;
+		margin-right: 3px !important;
+	}
+
+	.woocommerce #payment ul.payment_methods li input.input-radio {
+		width: 15px !important;
+		height: 15px !important;
+	}
+
+	.table-responsive {
+		overflow-x: visible !important;
+		overflow-y: visible !important;
+		margin-left: -20px !important;
+		margin-right: -20px !important;
+		width: auto !important;
+	}
+
+	.table-responsive .product-thumbnail { display: none !important; }
+
+	.table-responsive > .table > thead > tr > th, .table-responsive > .table > thead > tr > td, .table-responsive > .table > tbody > tr > th, .table-responsive > .table > tbody > tr > td, .table-responsive > .table > tfoot > tr > th, .table-responsive > .table > tfoot > tr > td {
+		white-space: normal !important;
+	}
+
+	table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td, table > tfoot > tr > th, table > tfoot > tr > td, .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+		padding: 5px !important;
+	}
+
+	.btn {
+		padding: 5px 5px !important;
+	}
+
+}
+
+.form-row .terms label,
+.payment_methods label {
+	vertical-align: top;
+	margin-top: -2px;
+	text-align: left;
+	margin-left: 5px;
+}
+
+.payment_methods input {
+	margin-top: 8px !important;
+}
+
+.payment_methods {
+	padding: 20px !important;
+}
+
+@media (max-width: 991px) {
+
+	.form-row .terms label,
+	.payment_methods label {
+		width: 80%;
+	}
+}
+
+/* Button Warenkorb und für den Newsletter unter den Beiträgen und Produkten*/
+.button {
+	color: #fbfbec;
+  background-color: #772446;
+  border: 1px solid #772446;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  text-transform: uppercase;
+  padding: 10px 28px;
+  font-weight: 600;
+  font-family: 'Raleway';
+  letter-spacing: 0.1em;
+}
+
+.button:hover, .button:focus, .button:active, .button.active {
+  color: #ff549e;
+  background-color: #772446;
+  border: 1px solid #772446;
+}
+
+.navbar-mega .navbar-nav > li .dropdown-menu ul li a {
+    text-transform: none;
+}
+
+/* hier die Hintergrundfarbe Magzin - Artikel Auszugstext */
+.vc_custom_1419240516480 {
+	background-color: #fbfbec !important;
+}
+
+/* Aenderung der Button Farben */
+.vc_btn-juicy_pink, a.vc_btn-juicy_pink, button.vc_btn-juicy_pink {
+    background-color: #772446;
+    color: #fbfbec!important;
+    width: 100%;
+  }
+
+a.vc_btn-juicy_pink:hover, button.vc_btn-juicy_pink:hover {
+    background-color: #772446;
+    color: #ff549e!important;
+  }
+
+/* Abstand Magazinbeitrag von oben */
+.entry-thumb {
+    position: relative;
+	padding-top: 10px;
+}
+
+/* Abstand nach oben der rechten Sidebar von Magazin Beiträgen.   */
+.wpo-sidebar, .wpo-sidebar-right {
+	padding-top: 15px !important;
+}
+
+/* Abstand nach oben des Magazins */
+.owl-carousel .owl-stage-outer {
+	padding-top: 15px !important;
+}
+
+/* Bild im Beitrag zentrieren */
+.post-thumbnail {
+    text-align: center !important;
+}
+
+/* Sterne in der Sidebar weg */
+.product_list_widget .widget-product .star-rating{
+	visibility: hidden !important;
+}
+
+.skin-gifts .navbar-mega .navbar-collapse > ul.navbar-nav > li > a {
+    margin: 0 10px !important;
+}
+
+/* Bild im Warenkorb auf Handy anzeigen */
+@media (max-width: 767px){
+
+.woocommerce table.shop_table_responsive tr td:before, .woocommerce-page table.shop_table_responsive tr td:before{
+	    content: none;
+	}
+
+.woocommerce table.cart .product-thumbnail,.woocommerce-page #content table.cart .product-thumbnail, .woocommerce-page table.cart .product-thumbnail{
+		width: 100px!important;
+		display: block!important;
+		text-align: center !important;
+	}
+
+.woocommerce table.shop_table_responsive tbody tr:first-child td:first-child, .woocommerce-page table.shop_table_responsive tbody tr:first-child td:first-child {
+
+border-top: 1px solid rgba(0,0,0,.1)!important;
+
+}
+
+/* Klasse fuer Bilder im Beitrag Produkt - individueller Loop 70% - Handy Darstellung*/
+.pics-indiv-loop{
+		width: 70%;
+    height: 70%;
+}
+
+
+}
+
+/* Bildgröße Warenkorb auf Desktop und Geräten größer Handy */
+.product-thumbnail img, .table.cart .product-thumbnail img {
+    /* old
+    width: 120px !important;
+    height: 80px !important; */
+    width: 60% !important;
+    height: 40% !important;
+}
+
+/* Banner auf Kategorieseite zentrieren */
+.widget{
+    text-align: center !important;
+}
+
+/*Klasse für Button auf der Startsteite - veraltet*/
+.wpllm_button {
+  padding: 5px !important;
+  background-color: #46494a;
+  font-weight: bold;
+  color: #fbfbec;
+  border-radius: 10px;
+  font-family: 'Merriweather Sans';
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+/*Klasse für Button auf der Startsteite - neu*/
+.wpllm_button_01 {
+  text-decoration: underline;
+}
+
+/*Klasse für die H2 Überschrift in der Blog-Übersichtsseite*/
+.h2blogview h2 {
+   font-size: 28px;
+   font-weight: 600;
+   letter-spacing: 0.05em;
+   color: #46494a;
+}
+
+/* Klassen für eigene Buttons über die ganze Breite als Ergänzung zu den Klassen */
+/* wpllm_button_02 button single_add_to_cart_button alt btn-block */
+a.wpllm_button_02 {
+   width: 100%;
+   color: #fbfbec !important;
+   text-align: center;
+}
+a.wpllm_button_02:hover{
+   color: #ff549e!important;
+   text-decoration: none !important;
+}
+
+/* Links im Blog unterstrichen */
+.single-blog a {
+   text-decoration: underline;
+}
+
+/* Links auf Kassenseite unterstrichen */
+.checkbox a {
+   text-decoration: underline;
+}
+
+/* Fettschrift auf Kassenseite entfernen */
+label {
+   font-weight: normal !important;
+}
+
+
+element.style {
+}
+span.tcb-button-texts {
+    color: inherit;
+    display: block;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-flex: 1;
+    position: relative;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media (min-width: 300px)
+[data-css="tve-u-163b0f5e747"] .tcb-button-link {
+    background-color: #662847 !important;
+    text-shadow: none;
+}
+
+.widget .clearfix > a:hover {
+   color: #ff549e !important;
+   text-decoration: none !important;
+}
+
+.widget .clearfix > a {
+		text-decoration: none;
+		width: 100%;
+    color: #fbfbec !important;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 12px;
+    font-weight: 600;
+    font-family: 'Raleway';
+    letter-spacing: 0.1em;
+    background-color: #772446;
+    border: 1px solid #772446;
+    -webkit-border-radius: 4px;
+    font-style: normal;
+    line-height: 3.5;
+}
+
+/* ab hier alle Einstellungen für die lokale Schriften */
+
+h1, .h1 {
+	font-size: 28px !important;
+	color: #46494a !important;
+	font-weight: 400 !important;
+	letter-spacing: 0.05em !important;
+}
+
+h2, .h2 {
+	font-size: 24px !important;
+	color: #46494a !important;
+	font-weight: 400 !important;
+/*	letter-spacing: 0.05em !important;*/
+}
+
+h3, .h3 {
+	font-size: 22px !important;
+	color: #46494a !important;
+	font-weight: 400 !important;
+/*	letter-spacing: 0.05em !important;*/
+}
+
+h4, .h4 {
+	font-size: 20px !important;
+	color: #46494a !important;
+	font-weight: 400 !important;
+/*	letter-spacing: 0.05em !important;*/
+}
+
+h5, .h5 {
+	font-size: 18px !important;
+	color: #46494a !important;
+	font-weight: 400 !important;
+/*	letter-spacing: 0.05em !important;*/
+}
+
+h6, .h6 {
+	font-size: 16px !important;
+	color: #46494a !important;
+	font-weight: 400 !important;
+/*	letter-spacing: 0.05em !important;*/
+}
+
+/* Link und Schrift unter den Produkten bei den Übersichten */
+
+.name {
+	font-size: 16px !important;
+}
+
+.name a {
+	color: #46494a !important;
+}
+
+.name a:hover {
+	/* dunkles Rot hover
+	color: #772446 !important; */
+	/* pink hover */
+	color: #ff549e !important;
+}
+
+.btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
+	color: #ff549e !important;
+}
+
+h2 .shipping-calculator-button {
+	font-family: 'Raleway' !important;
+}
+
+/* Farbe über den Bildbuttons der Kategorie Seiten */
+.cat-top-featured-container-text .inner {
+   background-color: #772446 !important;
+   color: #fbfbec !important;
+}
+
+/*
+Pop-UP bei Ausgang Webseite
+*/
+#exitpopup-modal .exitpopup-modal-window {
+	background-color: #fbfbec !important;
+}
+
+#exitpopup-modal .modal-body {
+	padding: 5px 5px !important;
+}
+
+/*
+Buttons im Blog nicht unterstrichen
+*/
+.single-blog a {
+    text-decoration: none !important;
+}
+
+/*
+Bildgröße bei Blogübersicht und im Beitrag auf 50%
+*/
+.post-area .entry-thumb img {
+	width: 50% !important;
+}
+
+.vc_gitem-animated-block {
+	width: 50% !important;
+	margin: auto !important;
+}
+
+/* HINWEISE
+.beispiel.hinweis ### selektiert Elemente, die der Klasse „beispiel“ und „hinweis“ angehören;
+.beispiel, .hinweis ### selektiert Elemente, die der Klasse „beispiel“ oder „hinweis“ angehören (siehe von einander unabhängige Selektoren)
+.beispiel .hinweis ### selektiert Elemente, die der Klasse „hinweis“ innerhalb der Klasse „beispiel“ angehören. (siehe Nachfahrenselektor).
+*/
+
+/* Link für Deaktivierung und Aktivierung des Google Analytics Cookies auf Datenschutzseite unterstreichen */
+a#gaoo-link {
+text-decoration: underline !important;
+}
+
+
+/* Einstellungen Skalierung Bild automatisch bei Handy */
+@media only screen and (max-width:1200px) {
+.mobile600-image-size-auto{
+max-width:90% !important;
+height:auto !important;
+margin-bottom: 3px !important;
+}
+}
+
+/* AMAZON Logo */
+@media (max-width: 767px){
+.az-logo-linked {
+margin-top: 10%;
+margin-bottom: 35px;
+margin-left: 35px;
+margin-right: 10px;
+float: right;
+width: 125px;
+height: auto;
+}
+}
+@media (min-width: 768px){
+.az-logo-linked {
+margin-top: 10%;
+margin-bottom: 50px;
+margin-left: 50px;
+margin-right: 10px;
+float: right;
+width: 250px;
+height: auto;
+}
+}
+
+/* Button im Mailchimp Formular */
+.buttonmail {	background-color: #772446 !important;}
+
+/* Ausblenden von small - unter dem Warenkorb - dieser englische Hinweis des Lieferlandes */
+small, .small {
+    display: none;
+}
+
+/* PICS rechts Digistore Einzigartig Einfach Ich*/
+@media (max-width: 767px){
+.eei-produkt-linked {
+margin-top: 10%;
+margin-bottom: 35px;
+margin-left: 35px;
+margin-right: 10px;
+float: right;
+width: 125px;
+height: auto;
+}
+}
+@media (min-width: 768px){
+.eei-produkt-linked {
+margin-top: 10%;
+margin-bottom: 50px;
+margin-left: 50px;
+margin-right: 10px;
+float: right;
+width: 200px;
+height: auto;
+}
+}
+
+/*Warenkorb Bilder immer proportional */
+.product-thumbnail img, .table.cart .product-thumbnail img {
+    width: 60% !important;
+    height: auto !important;
+}
+
+/* Kasse Bilder in der Tabelle fuer Produkte */
+.product-name img {
+	width: 20%;
+	height: auto;
+	margin: 5px;
+}
+
+
+/* Diese Einstellungen dienen dem richtigen Anzeigen der Produktübersichten. */
+/* hier wird der Bereich wo das Bild drin ist auf eine feste Höhe eingestellt */
+@media (min-width: 768px){
+.thumbnail.text-center.product.product-grid.product-block.style-fashion > .image {
+height: 120px !important;
+}
+}
+
+/* hier wird der Bereich unter dem Bild auf eine feste Höhe eingestellt */
+@media (min-width: 768px){
+.thumbnail.text-center.product.product-grid.product-block.style-fashion > .caption {
+height: 120px !important;
+}
+}
+
+/* hier wird der Text unter dem Preis in das weiße sichtbare Feld nach unten verschoben */
+@media (min-width: 768px){
+.thumbnail.text-center.product.product-grid.product-block.style-fashion > .caption > .meta {
+padding-top: 30px !important;
+}
+}
+
+/* "ClearSelection" bei variablen Produkten ausblenden */
+
+a.reset_variations {
+	display: none !important;
+}
+
+.product-info .cart>div {
+	float: none !important;
+}
