@@ -79,7 +79,7 @@ function bs_shortcode_farbkategorien( $atts ) {
 					$typ = isset( $term_meta['typ_farbe'] ) ? esc_attr( $term_meta['typ_farbe'] ) : 'Farbe';
 					
 					if ( $color !== '' && $typ === 'Farbe' ) {
-						$url = esc_url( '/produktkategorie/' . $term_parent->slug . '/' . $term->slug . '/' );
+						$url = esc_url( home_url( '/produktkategorie/' . $term_parent->slug . '/' . $term->slug . '/' ) );
 						$html .= '<a href="' . $url . '">';
 						$html .= '<div class="product-color-cat">';
 						$html .= '<img src="' . esc_url( $color ) . '" alt="' . esc_attr( $term->name ) . '" />';
@@ -120,7 +120,7 @@ function bs_shortcode_farbkategorien( $atts ) {
 					$typ = isset( $term_meta['typ_farbe'] ) ? esc_attr( $term_meta['typ_farbe'] ) : 'Farbe';
 					
 					if ( $color !== '' && $typ === 'Farbe' ) {
-						$url = esc_url( '/produktkategorie/' . $term_parent2->slug . '/' . $term_parent->slug . '/' . $term->slug . '/' );
+						$url = esc_url( home_url( '/produktkategorie/' . $term_parent2->slug . '/' . $term_parent->slug . '/' . $term->slug . '/' ) );
 						$html .= '<a href="' . $url . '">';
 						$html .= '<div class="product-color-cat">';
 						$html .= '<img src="' . esc_url( $color ) . '" alt="' . esc_attr( $term->name ) . '" />';
@@ -172,7 +172,7 @@ function bs_shortcode_stimmungskategorien( $atts ) {
 					$typ = isset( $term_meta['typ_farbe'] ) ? esc_attr( $term_meta['typ_farbe'] ) : 'Farbe';
 					
 					if ( $color !== '' && $typ === 'Stimmung' ) {
-						$url = esc_url( '/produktkategorie/' . $term_parent->slug . '/' . $term->slug . '/' );
+						$url = esc_url( home_url( '/produktkategorie/' . $term_parent->slug . '/' . $term->slug . '/' ) );
 						$html .= '<a href="' . $url . '">';
 						$html .= '<div class="product-atmosphere-cat">';
 						$html .= '<img src="' . esc_url( $color ) . '" alt="' . esc_attr( $term->name ) . '" />';
@@ -213,7 +213,7 @@ function bs_shortcode_stimmungskategorien( $atts ) {
 					$typ = isset( $term_meta['typ_farbe'] ) ? esc_attr( $term_meta['typ_farbe'] ) : 'Farbe';
 					
 					if ( $color !== '' && $typ === 'Stimmung' ) {
-						$url = esc_url( '/produktkategorie/' . $term_parent2->slug . '/' . $term_parent->slug . '/' . $term->slug . '/' );
+						$url = esc_url( home_url( '/produktkategorie/' . $term_parent2->slug . '/' . $term_parent->slug . '/' . $term->slug . '/' ) );
 						$html .= '<a href="' . $url . '">';
 						$html .= '<div class="product-atmosphere-cat">';
 						$html .= '<img src="' . esc_url( $color ) . '" alt="' . esc_attr( $term->name ) . '" />';
@@ -330,10 +330,16 @@ add_action( 'product_cat_edit_form_fields', 'os_edit_product_category_fields', 1
 
 /**
  * Save custom meta for product category taxonomy
+ * Note: Nonce verification is handled by WordPress core before this hook is called
  * 
  * @param int $term_id Term ID
  */
 function save_taxonomy_custom_meta( $term_id ) {
+	// Check user capabilities
+	if ( ! current_user_can( 'manage_product_terms' ) && ! current_user_can( 'manage_categories' ) ) {
+		return;
+	}
+	
 	if ( isset( $_POST['term_meta'] ) && is_array( $_POST['term_meta'] ) ) {
 		$t_id = $term_id;
 		$term_meta = get_option( "product_cat_$t_id" );
@@ -382,7 +388,7 @@ function wdm_add_custom_fields() {
 }
 add_action( 'woocommerce_single_product_summary', 'wdm_add_custom_fields', 21 );
 
-//Zus�tzliche Felder im Produkt
+// Zusaetzliche Felder im Produkt
 add_action( 'woocommerce_product_options_pricing', 'wc_add_product_field' ); 
 function wc_add_product_field() {
 
@@ -392,16 +398,22 @@ function wc_add_product_field() {
 	woocommerce_wp_textarea_input( array( 'id' => 'woocommerce_besondere_merkmale', 'class' => '', 'label' => 'Besondere Merkmale' ) );
 }
 
-//speichere zus�tzliche Felder im Produkt
+// Speichere zusaetzliche Felder im Produkt
 add_action( 'save_post', 'wc_save_product_field' );
 /**
  * Save custom product fields
+ * Note: Nonce verification is handled by WordPress core before this hook is called
  * 
  * @param int $product_id Product ID
  */
 function wc_save_product_field( $product_id ) {
 	// If this is an autosave do nothing, we only save when update button is clicked
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+	
+	// Check user capabilities
+	if ( ! current_user_can( 'edit_product', $product_id ) && ! current_user_can( 'edit_post', $product_id ) ) {
 		return;
 	}
 	
@@ -432,15 +444,15 @@ function custom_woocommerce_add_terms() {
 	?>
 	<p class="form-row terms">
 		<input type="checkbox" class="input-checkbox" name="terms1" value="1" <?php checked( isset( $_POST['terms1'] ), true ); ?> id="terms1" />
-		<label for="terms1" class="checkbox">Ich habe die <a href="<?php echo esc_url( '/datenschutz/' ); ?>" target="_blank">Datenschutzerkl&auml;rung</a> gelesen und akzeptiert.</label>
+		<label for="terms1" class="checkbox">Ich habe die <a href="<?php echo esc_url( home_url( '/datenschutz/' ) ); ?>" target="_blank" rel="noopener noreferrer">Datenschutzerkl&auml;rung</a> gelesen und akzeptiert.</label>
 	</p>
 	<p class="form-row terms">
 		<input type="checkbox" class="input-checkbox" name="terms2" value="1" <?php checked( isset( $_POST['terms2'] ), true ); ?> id="terms2" />
-		<label for="terms2" class="checkbox">Ich habe das <a href="<?php echo esc_url( '/widerrufsrecht/' ); ?>" target="_blank">Widerrufsrecht</a> zur Kenntnis genommen.</label>
+		<label for="terms2" class="checkbox">Ich habe das <a href="<?php echo esc_url( home_url( '/widerrufsrecht/' ) ); ?>" target="_blank" rel="noopener noreferrer">Widerrufsrecht</a> zur Kenntnis genommen.</label>
 	</p>
 	<p class="form-row terms">
 		<input type="checkbox" class="input-checkbox" name="terms3" value="1" <?php checked( isset( $_POST['terms3'] ), true ); ?> id="terms3" />
-		<label for="terms3" class="checkbox">Ich habe die <a href="<?php echo esc_url( '/agb/' ); ?>" target="_blank">Allgemeinen Gesch&auml;ftsbedingungen (AGB)</a> und die <a href="<?php echo esc_url( '/lieferzeit-versandkosten/' ); ?>" target="_blank">Hinweise zu Lieferzeit &amp; Versandkosten</a> gelesen und akzeptiert.</label>
+		<label for="terms3" class="checkbox">Ich habe die <a href="<?php echo esc_url( home_url( '/agb/' ) ); ?>" target="_blank" rel="noopener noreferrer">Allgemeinen Gesch&auml;ftsbedingungen (AGB)</a> und die <a href="<?php echo esc_url( home_url( '/lieferzeit-versandkosten/' ) ); ?>" target="_blank" rel="noopener noreferrer">Hinweise zu Lieferzeit &amp; Versandkosten</a> gelesen und akzeptiert.</label>
 	</p>
 	<?php
 }
@@ -449,6 +461,7 @@ function custom_woocommerce_add_terms() {
 add_action('woocommerce_checkout_process', 'my_custom_checkout_field_process');
 /**
  * Validate custom checkout fields
+ * Note: Nonce verification is handled by WooCommerce checkout process
  */
 function my_custom_checkout_field_process() {
 	if ( empty( $_POST['terms1'] ) ) {
@@ -644,7 +657,7 @@ function os_add_other_categories() {
 					$typ = isset( $term_meta['typ_farbe'] ) ? esc_attr( $term_meta['typ_farbe'] ) : 'Farbe';
 					
 					if ( $color === '' ) {
-						$url = esc_url( '/produktkategorie/' . $category->slug . '/' . $term->slug . '/' );
+						$url = esc_url( home_url( '/produktkategorie/' . $category->slug . '/' . $term->slug . '/' ) );
 						echo '<a href="' . $url . '">' . esc_html( $term->name ) . '</a><br />';
 						
 						// Hole Unterkategorien
@@ -664,7 +677,7 @@ function os_add_other_categories() {
 									$u_typ = isset( $u_term_meta['typ_farbe'] ) ? esc_attr( $u_term_meta['typ_farbe'] ) : 'Farbe';
 									
 									if ( $u_color === '' ) {
-										$u_url = esc_url( '/produktkategorie/' . $category->slug . '/' . $term->slug . '/' . $u_term->slug . '/' );
+										$u_url = esc_url( home_url( '/produktkategorie/' . $category->slug . '/' . $term->slug . '/' . $u_term->slug . '/' ) );
 										echo '<a style="margin-left:15px;font-size:0.9em;" href="' . $u_url . '">' . esc_html( $u_term->name ) . '</a><br />';
 									}
 								}

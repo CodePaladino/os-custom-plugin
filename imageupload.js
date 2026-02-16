@@ -1,6 +1,5 @@
 jQuery(document).ready(function($) {
 	$('#upload_image_button').click(function() {
-		var formfield = $('#term_meta_color_img').attr('name');
 		tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
 		return false;
 	});
